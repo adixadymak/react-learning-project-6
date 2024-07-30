@@ -6,6 +6,7 @@ export default function Player() {
 
   function handleClick() {
     setUserName(playerNameRef.current.value);
+    playerNameRef.current.value = ""; //clearing the input after saving.
   }
 
   // for line 16 - Or this userName ? userName : "unknown entity"
