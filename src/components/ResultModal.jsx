@@ -8,8 +8,18 @@ const ResultModal = forwardRef(function ResultModal(
   useImperativeHandle(ref, () => {
     return {
       open() {
-        dialog.current.showModal();
+        // This line
+        if (!dialog.current.open) {
+          dialog.current.showModal();
+        }
+        //
       },
+
+      //this
+      isOpen() {
+        return dialog.current.open;
+      },
+      //
     };
   });
 
